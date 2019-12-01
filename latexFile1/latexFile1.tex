@@ -1,33 +1,55 @@
-\documentclass[a4paper]{article}
+\documentclass{article}
+
+%adding package like this:
+%	\usepackage{PACKAGENAME}
+
+% equation% is located in this package
+\usepackage{amsmath}
 
 
-\geometry{a4paper,left=15mm,right=15mm,top=20mm,bottom=20mm}
-\pagestyle{fancy}
-\lhead{Firstname Lastname}
-\chead{Course}
-\rhead{\today}
-\cfoot{\thepage}
-
-\setlength{\headheight}{23pt}
-\setlength{\parindent}{0.0in}
-\setlength{\parskip}{0.0in}
+\title{My first document}
+\date{2013-09-01}
+\author{Saleh Afzoon}
 
 \begin{document}
 
-\section*{Exercise Sheet x}
+%delete first page number
+\pagenumbering{gobble}
+\maketitle
+\newpage
+  
+\pagenumbering{arabic}
 
-\vspace{0,75cm}
 
-\subsection*{Exercise 1}
-Text
+\section{Section}
+Hello World!
 
-\vspace{0,75cm}
+\subsection{Subsection}
+Structuring a document is easy!
 
-\subsection*{Exercise 2}
-Text
+\subsubsection{Subsubsection}
+More text.
 
-\vspace{0,75cm}
+\paragraph{Paragraph}
+some more text.
 
-\subsection*{Exercise 3}
-Text
+\subparagraph{Subparagraph}
+Even more text.
+
+\section{Math Section}
+
+\begin{equation*}
+	f(x) = x^2
+\end{equation*}
+
+
 \end{document}
+
+%	article , book 
+%	article -> add page number auto
+% \begin \end -> defines an environment. An environment is simply an area of your document where certain typesetting rules apply. 
+
+%Useful settings for pagenumbering:
+%	gobble - no numbers
+%	arabic - arabic numbers
+%	roman - roman numbers
