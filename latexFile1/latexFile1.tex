@@ -6,19 +6,28 @@
 % equation% is located in this package
 \usepackage{amsmath}
 
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{setspace}
 
 \title{My first document}
 \date{2013-09-01}
 \author{Saleh Afzoon}
+
+\setcounter{tocdepth}{3}
 
 \begin{document}
 
 %delete first page number
 \pagenumbering{gobble}
 \maketitle
+
 \newpage
   
 \pagenumbering{arabic}
+
+\tableofcontents
+\newpage
 
 
 \section{Text Section}
@@ -44,14 +53,60 @@ and this is math equation environment sample:
 	f(x) = x^2
 \end{equation*}
 
+
 and align environment sample:
 \begin{align*}
   f(x) &= x^2\\
   g(x) =& \frac{1}{x}\\
-  h(x) = x^2\\
+  h(x) = \frac{x^2}{\sqrt[3]{x}} \\
   F(x) = \int^a_b \frac{1}{3}x^3 &
 \end{align*}
 
+sample matix : 
+$$
+\left[
+\begin{matrix}
+1 & 0 & 2 & 3\\
+0 & 1 & 4 & 1
+\end{matrix}
+\right]
+\left(\frac{1}{\sqrt{x}}\right)
+$$
+
+%label which is invisible, but useful if we want to refer to our figure in our document.You can use the \ref command to refer to the figure (marked by label)
+\newpage
+
+\section{Image Section}
+\begin{figure}[h!]
+
+\centering
+\includegraphics[width=0.7\linewidth]{profile2.jpg}
+\caption{cute cat}
+\label{fig:cat}
+\end{figure}
+
+Figure \ref{fig:cat} shows a boat.
+
+\section{Multi Image Section}
+\begin{figure}[h!]
+\centering
+\begin{subfigure}[b]{0.4\linewidth}
+\includegraphics[width=\linewidth]{profile2.jpg}
+\caption{cat1.}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\linewidth}
+\includegraphics[width=\linewidth]{profile2.jpg}
+\caption{cat2.}
+\end{subfigure}
+
+\end{figure}
+
+\newpage
+
+\begin{appendix}
+  \listoffigures
+  \listoftables
+\end{appendix}
 
 \end{document}
 
@@ -66,3 +121,17 @@ and align environment sample:
 
 
 % align environment for multiple equations and automatic alignment
+
+%options for figure
+%h (here) - same location
+%t (top) - top of page
+%b (bottom) - bottom of page
+%p (page) - on an extra page
+%! (override) - will force the specified location
+
+
+%\setcounter{tocdepth}{1} % Show sections
+%\setcounter{tocdepth}{2} % + subsections
+%\setcounter{tocdepth}{3} % + subsubsections
+%\setcounter{tocdepth}{4} % + paragraphs
+%\setcounter{tocdepth}{5} % + subparagraphs
